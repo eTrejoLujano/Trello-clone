@@ -1,12 +1,8 @@
-// import { setupCounter } from "./counter.js";
-
-const boardFunction = async () => {
-  document.getElementById("board").innerHTML = `
+function boardFunction() {
+  return (document.getElementById("main-page").innerHTML = `
 <div>
   Hi is this thing on?
 </div>
-`;
-};
-boardFunction();
-
-// setupCounter(document.querySelector("#counter"));
+`);
+}
+// boardFunction();

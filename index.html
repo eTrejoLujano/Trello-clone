@@ -8,18 +8,15 @@
     <title>theMove</title>
   </head>
   <body>
-    <div id="root" class="flex">
-      <nav
-        id="main-nav"
-        class="w-[6rem] h-screen bg-gray-300 border flex flex-col items-center"
-      >
-        <a href="/home" onclick="route()">Home</a>
-        <a href="/about" onclick="route()">About</a>
-        <a href="/lorem" onclick="route()">Lorem</a>
-      </nav>
-      <a id="main-page" class="w-screen h-screen"></a>
+    <div id="root">
+      <a id="main-page">Hi </a>
     </div>
-    <script type="text/javascript" src="src/components/Board/Board.js"></script>
-    <script src="src/router.js"></script>
+    <script>
+      const board = document.getElementById("main-page");
+      // console.log("board", board);
+      // board.innerHTML = `<div>
+      //     Hi is this thing on?
+      //     </div>`;
+    </script>
   </body>
 </html>
