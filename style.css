@@ -1,13 +1,19 @@
 #root,
-#main-page {
+#board {
   height: 100vh;
-  width: 100vh;
+  width: 100%;
   display: flex;
 }
 
-/* .list {
-  width: ;
-} */
+.list {
+  width: 10rem;
+  height: fit-content;
+  display: flex;
+  border-style: solid;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 1rem;
+}
 
 /* #main-page {
   height: 100vh;

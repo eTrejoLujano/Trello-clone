@@ -5,18 +5,39 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <link rel="stylesheet" href="style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>theMove</title>
+    <title>Board</title>
   </head>
   <body>
     <div id="root">
-      <a id="main-page">Hi </a>
+      <div id="board"></div>
     </div>
     <script>
-      const board = document.getElementById("main-page");
-      // console.log("board", board);
-      // board.innerHTML = `<div>
-      //     Hi is this thing on?
-      //     </div>`;
+      const lists = [
+        { name: "To Do", cards: [{ name: 1 }, { name: 2 }, { name: 3 }] },
+        { name: "In Progress", cards: [{ name: 4 }, { name: 5 }, { name: 6 }] },
+        { name: "Done", cards: [{ name: 7 }, { name: 8 }, { name: 9 }] },
+      ];
+      const board = document.getElementById("board");
+      for (let i = 0; i < lists.length; i++) {
+        let list = document.createElement("div");
+        list.setAttribute("class", "list");
+        let listName = document.createElement("p");
+        let listNode = document.createTextNode(lists[i].name);
+        listName.appendChild(listNode);
+        list.appendChild(listName);
+        for (let j = 0; j < lists[i].cards.length; j++) {
+          let card = document.createElement("div");
+          card.setAttribute("class", "card");
+          let cardName = document.createElement("p");
+          let cardNode = document.createTextNode(lists[i].cards[j].name);
+          cardName.appendChild(cardNode);
+          card.appendChild(cardName);
+          list.appendChild(card);
+        }
+        board.appendChild(list);
+      }
+      console.log("list", list);
+      console.log("board", board);
     </script>
   </body>
 </html>
