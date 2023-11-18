@@ -22,6 +22,7 @@
         let list = document.createElement("div");
         list.setAttribute("class", "list");
         let listName = document.createElement("p");
+        listName.setAttribute("class", "listName");
         let listNode = document.createTextNode(lists[i].name);
         listName.appendChild(listNode);
         list.appendChild(listName);
@@ -34,10 +35,18 @@
           card.appendChild(cardName);
           list.appendChild(card);
         }
+        let createCard = document.createElement("div");
+        createCard.setAttribute("class", "createCard");
+        let createCardTxt = document.createTextNode("+ Add a card");
+        createCard.appendChild(createCardTxt);
+        list.appendChild(createCard);
         board.appendChild(list);
       }
-      console.log("list", list);
-      console.log("board", board);
+      let createList = document.createElement("div");
+      createList.setAttribute("class", "createList");
+      let createListTxt = document.createTextNode("+ Add another List");
+      createList.appendChild(createListTxt);
+      board.appendChild(createList);
     </script>
   </body>
 </html>
