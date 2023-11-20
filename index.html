@@ -12,11 +12,16 @@
       <div id="board"></div>
     </div>
     <script>
+      function getData(form) {
+        var formData = new FormData(form);
+        return Object.fromEntries(formData);
+      }
       const lists = [
         { name: "To Do", cards: [{ name: 1 }, { name: 2 }, { name: 3 }] },
         { name: "In Progress", cards: [{ name: 4 }, { name: 5 }, { name: 6 }] },
         { name: "Done", cards: [{ name: 7 }, { name: 8 }, { name: 9 }] },
       ];
+      let cardBoolean = false;
       const board = document.getElementById("board");
       for (let i = 0; i < lists.length; i++) {
         let list = document.createElement("div");
@@ -44,8 +49,30 @@
       }
       let createList = document.createElement("div");
       createList.setAttribute("class", "createList");
+      createList.setAttribute("id", "createList");
       let createListTxt = document.createTextNode("+ Add another List");
+      createList.addEventListener("click", function () {
+        if (!cardBoolean) {
+          createList.parentNode.replaceChild(listForm, createList);
+          cardBoolean = true;
+        }
+      });
       createList.appendChild(createListTxt);
+      let listText = document.createElement("input");
+      listText.setAttribute("type", "text");
+      listText.setAttribute("name", "listText");
+      listText.setAttribute("value", "");
+      listText.setAttribute("class", "listText");
+      let listForm = document.createElement("form");
+      listForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+        getData(event.target);
+        console.log("new list", getData(event.target));
+        cardBoolean = false;
+        event.target.reset();
+        listForm.parentNode.replaceChild(createList, listForm);
+      });
+      listForm.appendChild(listText);
       board.appendChild(createList);
     </script>
   </body>
