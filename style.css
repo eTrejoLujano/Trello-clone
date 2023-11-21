@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  font-family: "Open Sans", sans-serif;
 }
 #root {
   margin: 0;
@@ -12,35 +13,64 @@ body {
   background-color: rgb(142, 68, 108);
 }
 
-.list,
-.createList {
-  width: 16rem;
-  margin-left: 1rem;
-  margin-top: 1rem;
-  border-radius: 0.75rem;
-  padding-left: 0.4rem;
-  padding-right: 0.4rem;
-  display: flex;
-  align-items: start;
-  flex-direction: column;
-  justify-content: center;
-}
-
 .list {
-  border-style: solid;
-  background-color: black;
-  padding-bottom: 0.6rem;
   height: fit-content;
 }
 
-.createList {
+.addList {
   color: white;
   background: rgba(152, 102, 129, 0.5);
   height: 3rem;
   font-size: 1rem;
 }
 
-.createList:hover {
+.listForm {
+  flex-direction: row;
+  justify-content: center;
+
+  padding-top: 0.4rem;
+  height: 10rem;
+}
+
+.listInput {
+  height: 1.3rem;
+  display: flex;
+  width: 15rem;
+  font-size: large;
+  border: none;
+  align-items: center;
+  color: white;
+  background-color: black;
+  padding-bottom: 0.6rem;
+}
+
+.list,
+.addList {
+  align-items: start;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.list,
+.listForm {
+  border-style: solid;
+  background-color: black;
+  padding-bottom: 0.6rem;
+}
+
+.list,
+.addList,
+.listForm {
+  width: 16rem;
+  margin-left: 1rem;
+  margin-top: 1rem;
+  border-radius: 1rem;
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
+  display: flex;
+}
+
+.addList:hover {
   background: rgba(179, 120, 151, 0.5);
 }
 
