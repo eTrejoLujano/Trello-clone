@@ -57,13 +57,6 @@
       addList.setAttribute("class", "addList");
       addList.setAttribute("id", "addList");
       let addListTxt = document.createTextNode("+ Add another List");
-      addList.addEventListener("click", function () {
-        if (!cardBoolean) {
-          addList.parentNode.replaceChild(listForm, addList);
-          cardBoolean = true;
-        }
-      });
-      addList.appendChild(addListTxt);
       let listInput = document.createElement("input");
       listInput.setAttribute("type", "text");
       listInput.setAttribute("name", "listInput");
@@ -71,6 +64,14 @@
       listInput.setAttribute("class", "listInput");
       let listForm = document.createElement("form");
       listForm.setAttribute("class", "listForm");
+      addList.addEventListener("click", function () {
+        if (!cardBoolean) {
+          addList.parentNode.replaceChild(listForm, addList);
+          listInput.focus();
+          cardBoolean = true;
+        }
+      });
+      addList.appendChild(addListTxt);
       listForm.addEventListener("submit", function (event) {
         event.preventDefault();
         getData(event.target);
@@ -79,7 +80,19 @@
         event.target.reset();
         listForm.parentNode.replaceChild(addList, listForm);
       });
+      let listButton = document.createElement("button");
+      listButton.setAttribute("listButton", "class");
+      listButton.setAttribute("type", "submit");
+      listButton.addEventListener("submit", function (event) {
+        event.preventDefault();
+        getData(event.target);
+        console.log("new list", getData(event.target));
+        cardBoolean = false;
+        event.target.reset();
+        listForm.parentNode.replaceChild(addList, listForm);
+      });
       listForm.appendChild(listInput);
+      listForm.appendChild(listButton);
       board.appendChild(addList);
     </script>
   </body>
