@@ -104,7 +104,15 @@
         }
       });
       listForm.appendChild(listInput);
-      listForm.appendChild(listButton);
+      let listDiv = document.createElement("div");
+      listDiv.setAttribute("class", "listDiv");
+      listDiv.appendChild(listButton);
+      let deleteList = document.createElement("div");
+      deleteList.setAttribute("class", "deleteList");
+      let deleteTxt = document.createTextNode("X");
+      deleteList.appendChild(deleteTxt);
+      listDiv.appendChild(deleteList);
+      listForm.appendChild(listDiv);
       board.appendChild(addList);
     </script>
   </body>

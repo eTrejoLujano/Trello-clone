@@ -9,7 +9,7 @@ body {
 #board {
   display: flex;
   flex-direction: row;
-  height: 100vh;
+  height: 100dvh;
   min-width: 100%;
   overscroll-behavior-x: contain;
   overflow-x: scroll;
@@ -27,11 +27,14 @@ body {
   height: 3rem;
   font-size: 1rem;
   margin-right: 1rem;
+  cursor: pointer;
 }
 
 .listButton {
   border: solid;
-  border-color: white;
+  color: black;
+  border-color: rgb(15, 141, 238);
+  background-color: rgb(15, 141, 238);
   width: fit-content;
   border-radius: 0.2rem;
   height: 2rem;
@@ -39,12 +42,32 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  cursor: pointer;
 }
 
 .listForm {
   flex-direction: column;
   padding-top: 0.4rem;
   height: fit-content;
+}
+
+.listDiv {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: white;
+}
+
+.deleteList {
+  width: 1rem;
+  height: 100%;
+  font-size: large;
+  display: flex;
+  margin-left: 0.7rem;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding-top: 0.2rem;
 }
 
 .listInput {
@@ -64,10 +87,15 @@ body {
   line-height: 1.3rem;
 }
 
+.listButton:hover {
+  border-color: rgb(84, 169, 235);
+  background-color: rgb(84, 169, 235);
+}
+
 .listInput:focus {
   border: solid;
   border-width: 0.16rem;
-  border-color: rgb(84, 149, 196);
+  border-color: rgb(92, 145, 183);
   border-radius: 0.3rem;
   outline: 0;
 }
@@ -83,7 +111,7 @@ body {
 .listForm {
   border-style: solid;
   background-color: black;
-  padding-bottom: 0.6rem;
+  padding-bottom: 0.4rem;
 }
 
 .list,
@@ -107,7 +135,7 @@ body {
 }
 
 p,
-.createCard {
+.addCard {
   color: rgb(199, 197, 197);
   font-size: 1rem;
   padding-left: 0.6rem;
@@ -124,14 +152,14 @@ p,
 }
 
 .card {
-  width: 15.2rem;
+  width: 15.6rem;
   background-color: rgb(39, 39, 43);
   border-style: solid;
 }
 
-.createCard {
+.addCard {
   width: 92.5%;
 }
-.createCard:hover {
+.addCard:hover {
   background-color: rgb(60, 60, 60);
 }
