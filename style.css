@@ -23,20 +23,28 @@ body {
 .addList {
   color: white;
   background: rgba(152, 102, 129, 0.5);
+  flex-shrink: 0;
   height: 3rem;
   font-size: 1rem;
+  margin-right: 1rem;
 }
 
 .listButton {
   border: solid;
   border-color: white;
+  width: fit-content;
+  border-radius: 0.2rem;
+  height: 2rem;
+  margin-top: 0.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .listForm {
   flex-direction: column;
-  justify-content: start;
   padding-top: 0.4rem;
-  height: 10rem;
+  height: fit-content;
 }
 
 .listInput {

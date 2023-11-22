@@ -81,8 +81,10 @@
         listForm.parentNode.replaceChild(addList, listForm);
       });
       let listButton = document.createElement("button");
-      listButton.setAttribute("listButton", "class");
+      listButton.setAttribute("class", "listButton");
       listButton.setAttribute("type", "submit");
+      let buttonTxt = document.createTextNode("Add a list");
+      listButton.appendChild(buttonTxt);
       listButton.addEventListener("submit", function (event) {
         event.preventDefault();
         getData(event.target);
@@ -90,6 +92,16 @@
         cardBoolean = false;
         event.target.reset();
         listForm.parentNode.replaceChild(addList, listForm);
+      });
+      document.addEventListener("click", function (e) {
+        if (
+          e.target !== addList &&
+          !addList.contains(e.target) &&
+          cardBoolean
+        ) {
+          cardBoolean = false;
+          listForm.parentNode.replaceChild(addList, listForm);
+        }
       });
       listForm.appendChild(listInput);
       listForm.appendChild(listButton);
