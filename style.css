@@ -143,7 +143,7 @@ p,
 }
 
 .card,
-.createCard {
+.addCard {
   height: 2.4rem;
   display: flex;
   align-items: center;
